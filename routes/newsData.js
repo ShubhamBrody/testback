@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const News = require("../models/news.model");
-const serverless = require('serverless-http');
 
 const app = express();
 app.use(express.json());
@@ -54,6 +53,4 @@ router.post("/create", (req, res) => {
     });
 });
 
-app.use('/.netlify/functions/api/news', router);
-
-module.exports.handler = serverless(app);
+module.exports = router;
