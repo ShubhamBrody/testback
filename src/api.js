@@ -10,6 +10,12 @@ router.get('/', (req, res) => {
     res.json({'HOLA' : 'BOLA'});
 });
 
-app.use('/.netlify/functions/api', router)
+
+const newsRoute = require(__dirname+'/../routes/newsData');
+
+router.use('/admin', adminRoute);
+
+app.use('/.netlify/functions/api', router);
+
 
 module.exports.handler = serverless(app);
