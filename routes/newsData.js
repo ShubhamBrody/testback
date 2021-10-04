@@ -53,4 +53,4 @@ router.post("/create", (req, res) => {
     });
 });
 
-module.exports.handler = router;
+module.exports = router;
