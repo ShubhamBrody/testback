@@ -13,8 +13,7 @@ router.get('/', (req, res) => {
 
 const newsRoute = require(__dirname+'/../routes/newsData');
 
-app.use('/news', newsRoute);
-
+app.use('/.netlify/functions/news', newsRoute);
 app.use('/.netlify/functions/api', router);
 
 
