@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 const News = require("../models/news.model");
+const serverless = require('serverless-http');
 
 const app = express();
 app.use(express.json());
