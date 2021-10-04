@@ -53,4 +53,6 @@ router.post("/create", (req, res) => {
     });
 });
 
-module.exports = router;
+app.use('/.netlify/functions/api/news', router);
+
+module.exports.handler = serverless(app);
