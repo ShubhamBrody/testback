@@ -12,6 +12,10 @@ mongoose.connect(process.env.MONGO_DB, {
   useUnifiedTopology: true,
 });
 
+router.get("/", (req, res) => {
+  res.json({report : "ERROR"})
+})
+
 router.post("/get", (req, res) => {
   News.find({ header: req.body.header }, (err, results) => {
     if (err) {
